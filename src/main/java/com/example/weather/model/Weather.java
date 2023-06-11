@@ -6,11 +6,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Weather {
+public class Weather implements Serializable {
     @JsonProperty("temp")
     private int temp;
     @JsonProperty("wind_speed")
