@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;
 
+
 @Component
 public class WeatherProducer {
     private JmsTemplate jmsTemplate;
@@ -17,5 +18,6 @@ public class WeatherProducer {
     public void sendWeather(Weather weather){
         jmsTemplate.convertAndSend("weatherQueue", weather);
         System.out.println("Сообщение отправлено.");
+
     }
 }
